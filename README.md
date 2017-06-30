@@ -3,12 +3,36 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
 
 传入Activity，FragmentActivity的上下文，Fragment 或者 v4.app.Fragment的引用
 
+## Features
+ - Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragment
+
 
 
  ![image](https://github.com/myjoybar/Android-lifecycle-listener/blob/master/screenshots/screenshot1.jpeg) 
  
   ![image](https://github.com/myjoybar/Android-lifecycle-listener/blob/master/screenshots/screenshot2.jpeg) 
   
+# Installation
+
+
+# Gradle Dependency
+
+
+
+####  Maven:
+```gradle
+ <dependency>
+  <groupId>com.joybar.lifecycle</groupId>
+  <artifactId>lifecyclelistener</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
+####  Gradle:
+```gradle
+  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.0'
+```
 ## Sample Usage
 
 
