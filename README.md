@@ -14,11 +14,6 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
   
 # Installation
 
-
-# Gradle Dependency
-
-
-
 ####  Maven:
 ```gradle
  <dependency>
@@ -70,7 +65,7 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
 
 ## License
 
-    Copyright 2016 MyJoybar
+    Copyright 2017 MyJoybar
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
