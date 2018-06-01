@@ -27,6 +27,9 @@ public class LifecycleManager {
 
 	private static volatile LifecycleManager mInstance;
 
+	public LifecycleManager() {
+	}
+
 	public LifecycleManager(String fragmentTagName) {
 		this.fragmentTagName = fragmentTagName;
 	}
@@ -41,6 +44,10 @@ public class LifecycleManager {
 		} else if (CheckUtils.isOnMainThread() && !(context instanceof Application)) {
 			if (context instanceof FragmentActivity) {
 				handleObserveLifecycle((FragmentActivity) context, lifecycleListener);
+			} else if (context instanceof Activity) {
+				handleObserveLifecycle((Activity) context, lifecycleListener);
+			} else if (context instanceof Activity) {
+				handleObserveLifecycle((Activity) context, lifecycleListener);
 			} else if (context instanceof Activity) {
 				handleObserveLifecycle((Activity) context, lifecycleListener);
 			} else if (context instanceof ContextWrapper) {
