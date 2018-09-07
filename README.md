@@ -26,7 +26,7 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
 
 ####  Gradle:
 ```gradle
-  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.1'
+  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.4'
 ```
 ## Sample Usage
 

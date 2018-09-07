@@ -83,7 +83,9 @@ public class LifecycleManager {
 
 	public void handleObserveLifecycle(FragmentActivity activity, LifecycleListener lifecycleListener) {
 		Log.d(TAG, "this context type  is FragmentActivity");
-		assertNotDestroyed(activity);
+		if(isDestroyed(activity)){
+			return;
+		}
 		android.support.v4.app.FragmentManager fm = activity.getSupportFragmentManager();
 		SupportLifecycleListenerFragment fragment = getSupportRequestManagerFragment(fm);
 		FragmentLifecycle fragmentLifecycle = getActivitySupportFragmentLifecycle(fragment);
@@ -92,7 +94,9 @@ public class LifecycleManager {
 
 	private void handleObserveLifecycle(Activity activity, LifecycleListener lifecycleListener) {
 		Log.d(TAG, "this context type  is Activity");
-		assertNotDestroyed(activity);
+		if(isDestroyed(activity)){
+			return;
+		}
 		android.app.FragmentManager fm = activity.getFragmentManager();
 		LifecycleListenerFragment fragment = getSupportRequestManagerFragment(fm);
 		FragmentLifecycle activityFragmentLifecycle = getActivityFragmentLifecycle(fragment);
@@ -144,8 +148,16 @@ public class LifecycleManager {
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 	private static void assertNotDestroyed(Activity activity) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && activity.isDestroyed()) {
-			//throw new IllegalArgumentException("You cannot start a load for a destroyed activity");
+			throw new IllegalArgumentException("You cannot start a load for a destroyed activity");
 		}
+	}
+
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+	private static boolean isDestroyed(Activity activity) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && activity.isDestroyed()) {
+			return true;
+		}
+		return false;
 	}
 
 }
