@@ -1,7 +1,7 @@
 # Android-lifecycle-listener
 Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragment
 
-传入Activity，FragmentActivity的上下文，Fragment 或者 v4.app.Fragment的引用
+传入Activity，FragmentActivity的上下文，Fragment 或者 v4.app.Fragment的引用，就可以方便的监听它们的生命周期
 
 ## Features
  - Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragment
