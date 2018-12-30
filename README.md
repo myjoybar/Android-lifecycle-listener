@@ -19,14 +19,14 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
  <dependency>
   <groupId>com.joybar.lifecycle</groupId>
   <artifactId>lifecyclelistener</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
   <type>pom</type>
 </dependency>
 ```
 
 ####  Gradle:
 ```gradle
-  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.5'
+  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.6'
 ```
 ## Sample Usage
 

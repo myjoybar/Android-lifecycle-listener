@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 
@@ -64,6 +65,29 @@ public class LifecycleManager {
         }
     }
 
+    public void registerLifecycleListener(android.support.v4.app.Fragment fragment, LifecycleListener lifecycleListener) {
+        if (fragment.getActivity() == null) {
+            throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
+        }
+        android.support.v4.app.FragmentManager fm = fragment.getChildFragmentManager();
+        SupportLifecycleListenerFragment supportLifecycleListenerFragment = getSupportRequestManagerFragment(fm);
+        FragmentLifecycle fragmentLifecycle = getActivitySupportFragmentLifecycle(supportLifecycleListenerFragment);
+        fragmentLifecycle.addListener(lifecycleListener);
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public void registerLifecycleListener(android.app.Fragment fragment, LifecycleListener lifecycleListener) {
+        if (fragment.getActivity() == null) {
+            throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
+        }
+        android.app.FragmentManager fm = fragment.getChildFragmentManager();
+        LifecycleListenerFragment lifecycleListenerFragment = getSupportRequestManagerFragment(fm);
+        FragmentLifecycle fragmentLifecycle = getActivityFragmentLifecycle(lifecycleListenerFragment);
+        fragmentLifecycle.addListener(lifecycleListener);
+
+    }
+
     public void handleObserveLifecycle(FragmentActivity activity, LifecycleListener
             lifecycleListener) {
         // Log.d(TAG, "this context type  is FragmentActivity");
@@ -90,6 +114,9 @@ public class LifecycleManager {
     private void handleObserveLifecycle(Context context, LifecycleListener lifecycleListener) {
         // Log.d(TAG, "this context type is Context");
     }
+
+
+
 
     private LifecycleListenerFragment getSupportRequestManagerFragment(final android.app
             .FragmentManager fm) {
