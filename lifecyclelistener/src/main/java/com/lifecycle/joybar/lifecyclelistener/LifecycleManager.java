@@ -54,10 +54,6 @@ public class LifecycleManager {
                 handleObserveLifecycle((FragmentActivity) context, lifecycleListener);
             } else if (context instanceof Activity) {
                 handleObserveLifecycle((Activity) context, lifecycleListener);
-            } else if (context instanceof Activity) {
-                handleObserveLifecycle((Activity) context, lifecycleListener);
-            } else if (context instanceof Activity) {
-                handleObserveLifecycle((Activity) context, lifecycleListener);
             } else if (context instanceof ContextWrapper) {
                 handleObserveLifecycle(((ContextWrapper) context).getBaseContext(),
                         lifecycleListener);
