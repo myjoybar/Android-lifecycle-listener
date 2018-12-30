@@ -16,11 +16,7 @@ public class LifecycleListenerFragment extends Fragment {
 
 
 	public LifecycleListenerFragment() {
-		this(new FragmentLifecycle());
-	}
-
-	public LifecycleListenerFragment(FragmentLifecycle lifecycle) {
-		this.fragmentLifecycle = lifecycle;
+		this.fragmentLifecycle = new FragmentLifecycle();
 	}
 
 

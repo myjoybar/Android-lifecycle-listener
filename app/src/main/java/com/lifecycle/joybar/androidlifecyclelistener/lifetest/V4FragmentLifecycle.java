@@ -18,7 +18,7 @@ import com.lifecycle.joybar.androidlifecyclelistener.LifecycleTestManager;
 public class V4FragmentLifecycle extends Fragment {
 
 
-	private V4FragmentLifecycle() {
+	public V4FragmentLifecycle() {
 		// Requires empty public constructor
 	}
 	public static V4FragmentLifecycle newInstance() {
@@ -29,7 +29,7 @@ public class V4FragmentLifecycle extends Fragment {
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		LifecycleTestManager.newInstance().registerLifecycleListener(this,"android.support.v4.app.Fragment");
+		LifecycleTestManager.newInstance().registerLifecycleListener(getActivity());
 	}
 
 	@Nullable

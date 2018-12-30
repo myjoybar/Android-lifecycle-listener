@@ -19,20 +19,20 @@ Monitor the life cycle of Activity，FragmentActivity，Fragment，v4.app.Fragme
  <dependency>
   <groupId>com.joybar.lifecycle</groupId>
   <artifactId>lifecyclelistener</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.5</version>
   <type>pom</type>
 </dependency>
 ```
 
 ####  Gradle:
 ```gradle
-  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.4'
+  compile 'com.joybar.lifecycle:lifecyclelistener:1.0.5'
 ```
 ## Sample Usage
 
 
 ```java
-   LifecycleManager lifecycleManager = new LifecycleManager(fragmentTagName);
+   LifecycleManager lifecycleManager = new LifecycleManager();
 		lifecycleManager.registerLifecycleListener(context, new LifecycleListener() {
 			@Override
 			public void onStart() {

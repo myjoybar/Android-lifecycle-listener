@@ -32,7 +32,7 @@ public class FragmentActivityLifecycle extends FragmentActivity {
 		tv.setTextSize(15);
 		tv.setText("android.support.v4.app.FragmentActivity");
 		tv.setGravity(Gravity.CENTER);
-		LifecycleTestManager.newInstance().registerLifecycleListener(this,"android.support.v4.app.FragmentActivity");
+		LifecycleTestManager.newInstance().registerLifecycleListener(FragmentActivityLifecycle.this);
 		initFragment();
 	}
 
