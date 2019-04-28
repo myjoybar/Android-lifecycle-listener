@@ -1,6 +1,7 @@
 package com.lifecycle.joybar.androidlifecyclelistener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 
 import com.lifecycle.joybar.androidlifecyclelistener.lifetest.ActivityLifecycle;
 import com.lifecycle.joybar.androidlifecyclelistener.lifetest.FragmentActivityLifecycle;
+import com.lifecycle.joybar.androidlifecyclelistener.lifetest.drop.DropInnerObjActivity;
 import com.lifecycle.joybar.lifecyclelistener.LifecycleManager;
 import com.lifecycle.joybar.lifecyclelistener.interfaces.LifecycleListener;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 			case R.id.button2:
 				FragmentActivityLifecycle.launch(MainActivity.this);
 				break;
+			case R.id.button3:
+				startActivity(new Intent(MainActivity.this, DropInnerObjActivity.class));
 
 			default:
 				break;

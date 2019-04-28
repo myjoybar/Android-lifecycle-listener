@@ -19,6 +19,7 @@
 
         <activity android:name=".lifetest.ActivityLifecycle"/>
         <activity android:name=".lifetest.FragmentActivityLifecycle"/>
+        <activity android:name=".lifetest.drop.DropInnerObjActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
