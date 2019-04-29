@@ -43,4 +43,17 @@
         app:layout_constraintRight_toLeftOf="@+id/guideline_right"
         app:layout_constraintTop_toBottomOf="@+id/button1"/>
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:onClick="onClick"
+        android:text="DropInnerObjActivity"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@+id/guideline_left"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_right"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
+
 </android.support.constraint.ConstraintLayout>
